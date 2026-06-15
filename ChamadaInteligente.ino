@@ -76,8 +76,9 @@ int medirDistancia() {
   
   if (duracao == 0) return 0; // Se deu timeout (0), retorna 0 (fora de alcance)
   
-  // Calcula a distância: Velocidade do som / 2 (ida e volta)
-  return duracao * 0.034 / 2;
+  // 0.034: Velocidade do som convertida para centímetros por microssegundo (cm/µs).
+  // Divisão por 2: O tempo mede a ida e a volta do som, então dividimos por 2 para ter a distância real.
+  return (duracao * 0.034) / 2;
 }
 
 /**
